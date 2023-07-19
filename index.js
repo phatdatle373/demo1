@@ -1,5 +1,5 @@
-const contentLetterSrart_actived = "Hãy nói gì đó ở đây trước khi người ấy mở bức thư nhé." //Lời mở đầu cho bức thư
-const mainContentLetter = "Gửi lời nhắn nhủ đến người bạn bạn yêu thương." //Nội dung của bức thư
+const contentLetterSrart_actived = "HappyBirthDay Đỗ Trí Dương." //Lời mở đầu cho bức thư
+const mainContentLetter = "Hôm nay là một ngày đặc biệt, đó chính là ngày sinh nhật của thầy-người thầy mà tụi em yêu quý. Nhân diệp sinh nhật thầy, em chúc thầy tuổi mới thật nhiều sức khỏe và tràn đầy nhiệt huyết với sự nghiệp cao cả của mình. Em chúc thầy mãi vững bước để chèo lái con thuyền trồng người của mình!. Em chúc thầy mãi khỏe, mãi trẻ, mãi vui vẻ. Em thay mặt lớp chúc thầy tất cả.!. " //Nội dung của bức thư
 
 // Gắn 1 đường link ảnh bất kì
 let imgStart = document.querySelector(".myAI"); //Hình ảnh xuất hiện trong lời mở đầu của bức thư
@@ -11,7 +11,7 @@ imgLetter.src = "./img/b4bbdb54b7152338d7143cb444a77f09.png"; //Hình ảnh xu�
 
 const splitContentLetterSrart_actived = contentLetterSrart_actived.split("");
 
-document.querySelector(".sticker").addEventListener("click", function () { //Hiệu ứng gõ chữ cho phần mở đầu của bức thư
+document.querySelector(".sticker").addEventListener("click", function() { //Hiệu ứng gõ chữ cho phần mở đầu của bức thư
     document.querySelector(".contentLetter").innerHTML = "";
     document.querySelector(".startLetter").classList.add("active")
     setTimeout(() => {
@@ -20,7 +20,7 @@ document.querySelector(".sticker").addEventListener("click", function () { //Hi�
                 document.querySelector(".contentLetter").innerHTML += val;
                 if (index == contentLetterSrart_actived.length - 1) {
                     setTimeout(() => {
-                        document.querySelector(".recieve").setAttribute("style", "opacity: 1; transition: .5s") 
+                        document.querySelector(".recieve").setAttribute("style", "opacity: 1; transition: .5s")
                     }, 1000)
                 }
             }, 50 * index)
@@ -28,7 +28,7 @@ document.querySelector(".sticker").addEventListener("click", function () { //Hi�
     }, 1000)
 })
 
-document.querySelector("#mess").addEventListener("change", function () { //Hiệu ứng gõ chữ cho phần nội dung của bức thư
+document.querySelector("#mess").addEventListener("change", function() { //Hiệu ứng gõ chữ cho phần nội dung của bức thư
     if (this.checked == true) {
         document.querySelector(".content").classList.add("actived")
         const splitMainContentLetter = mainContentLetter.split("");
@@ -58,7 +58,7 @@ document.querySelector(".recieve").addEventListener("click", () => {
         document.querySelector(".startForm").classList.add("close");
         setTimeout(() => {
             document.querySelector(".startForm").setAttribute("style", "bottom: 100%");
-            
+
             let getTypeDevice = document.documentElement.clientWidth;
             if (getTypeDevice <= 768) {
                 createLight(20)
